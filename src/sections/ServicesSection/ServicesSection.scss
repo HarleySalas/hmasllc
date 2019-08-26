@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &__heading {
+    font-size: 4rem;
+    flex: 0 0 100%;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0.4rem;
+      left: 50%;
+      width: 16rem;
+      height: 2px;
+      background-color: $color-primary;
+      transform: translateX(-50%);
+    }
+  }
+}

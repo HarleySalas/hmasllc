@@ -1,0 +1,53 @@
+@import "./variables.scss";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; //makes 1rem = 10px
+  background-color: $color-white;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+//Fallback for mobile browsers that don't support
+// overflow-x: hidden; from body tag.
+.app {
+  width: 100%;
+}
+
+//Remove the gray background on active links in IE 10.
+a {
+  &,
+  &:link,
+  &:visited {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+//Remove border on images inside links in IE 10
+img {
+  border-style: none;
+}
+
+//Change the font in all browsers
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  margin: 0;
+}

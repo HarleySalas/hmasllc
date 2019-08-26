@@ -1,0 +1,13 @@
+.dot-pattern {
+  width: 11rem;
+  height: 90vh;
+  background: url('data:image/svg+xml,\
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">\
+    <circle r="11" cx="100" cy="100" fill="white" />\
+    </svg>');
+  background-size: 11px 11px;
+  position: absolute;
+  left: 20%;
+  top: 0;
+  opacity: 0.24;
+}

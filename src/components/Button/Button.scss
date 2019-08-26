@@ -1,0 +1,66 @@
+@import "../../styles/variables.scss";
+
+.button {
+  position: relative;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0px 0px 7px 3px rgba($color-black, 0.11);
+  cursor: pointer;
+  transform: scale(1);
+  transition: all 0.11s ease-out;
+  font-weight: 400;
+
+  &:focus {
+    outline: none;
+  }
+
+  //BUTTON COLORS
+  &--primary {
+    color: $color-white;
+    background-color: $color-primary;
+
+    &:hover {
+      background-color: $color-primary-light;
+    }
+
+    &:active {
+      background-color: $color-primary-dark;
+      transform: scale(0.98);
+    }
+  }
+
+  &--black {
+    color: $color-white;
+    background-color: $color-black;
+    border: 1px solid $color-white;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:active {
+      color: $color-primary-dark;
+      transform: scale(0.98);
+    }
+  }
+
+  //BUTTON SIZES
+  &--sm {
+    font-size: 1.8rem;
+    padding: 0.4rem 0.7rem;
+    letter-spacing: 0.1rem;
+  }
+
+  &--md {
+    font-size: 2.2rem;
+    padding: 0.7rem 1rem;
+    letter-spacing: 0.2rem;
+  }
+
+  &--lg {
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem;
+    letter-spacing: 0.2rem;
+  }
+}

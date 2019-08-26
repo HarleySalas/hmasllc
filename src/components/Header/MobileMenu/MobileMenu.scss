@@ -1,0 +1,78 @@
+@import "../../../styles/variables.scss";
+
+.mobile-menu {
+  &__toggle {
+    position: absolute;
+    top: 1rem;
+    right: 5rem;
+    height: 5rem;
+    width: 5rem;
+    text-align: center;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: relative;
+
+    &,
+    &::before,
+    &::after {
+      content: "";
+      width: 4.5rem;
+      height: 2px;
+      border-radius: 5px;
+      display: inline-block;
+      background-color: $color-white;
+      transition: all 0.24s cubic-bezier(0.86, 0, 0.07, 1);
+      cursor: pointer;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -1.25rem;
+    }
+
+    &::after {
+      top: 1.25rem;
+    }
+
+    &--active {
+      background-color: transparent;
+
+      &::before {
+        top: 0;
+        transform: rotate(135deg);
+        background-color: $color-red;
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-135deg);
+        background-color: $color-red;
+      }
+    }
+  }
+
+  &__openDrawer {
+    animation: drawerOpen 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  }
+
+  &__closeDrawer {
+    animation: drawerClose 0.24s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  }
+}

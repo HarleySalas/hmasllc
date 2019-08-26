@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.contact {
+  &__container {
+  }
+
+  &__wrapper {
+    width: 40%;
+  }
+
+  &__heading {
+    margin: 0 0 0 2rem;
+  }
+
+  &__form-wrapper {
+    width: 60%;
+    height: 42rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}

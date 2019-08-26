@@ -1,0 +1,59 @@
+@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,900&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $color-black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.7rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+//letterspacing
+
+.ls__small {
+  letter-spacing: 0.1rem;
+}
+
+.ls__medium {
+  letter-spacing: 0.25rem;
+}
+
+.ls__large {
+  letter-spacing: 0.5rem;
+}
+
+//paragraphs
+p {
+  // text-indent: 2rem;
+}
+
+.p-margin {
+  margin-bottom: 2rem;
+}

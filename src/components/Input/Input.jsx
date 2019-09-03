@@ -4,7 +4,7 @@ import "./Input.scss";
 
 const Input = props => {
   return (
-    <React.Fragment>
+    <Fragment>
       <label htmlFor={props.name} className="input__label">
         {props.placeholder}
       </label>
@@ -37,7 +37,7 @@ const Input = props => {
           "input__underline--error"}`}
       />
       {props.errors && <p className="input__error">{props.errors}</p>}
-    </React.Fragment>
+    </Fragment>
   );
 };
 

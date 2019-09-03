@@ -1,0 +1,83 @@
+@import "../../styles/variables.scss";
+
+.error-page {
+  background-color: $color-black-light;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  color: $color-white;
+  text-align: center;
+
+  &__wrapper {
+    opacity: 0;
+    animation: errorAnimation 1.24s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  }
+
+  &__heading {
+    display: inline-block;
+    font-size: 5rem;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10rem;
+      height: 2px;
+      background-color: $color-red;
+      top: 50%;
+    }
+
+    &::before {
+      left: -2rem;
+      transform: translateX(-100%) scaleX(0);
+      animation: errorLeft 2.24s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+    }
+
+    &::after {
+      right: -2rem;
+      transform: translateX(100%) scaleX(0);
+      animation: errorRight 2.24s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+    }
+  }
+
+  &__message {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@keyframes errorAnimation {
+  0% {
+    transform: translateY(-10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes errorLeft {
+  0% {
+    transform: translateX(-100%) scaleX(0);
+  }
+
+  100% {
+    transform: translateX(-100%) scaleX(1);
+  }
+}
+
+@keyframes errorRight {
+  0% {
+    transform: translateX(100%) scaleX(0);
+  }
+
+  100% {
+    transform: translateX(100%) scaleX(1);
+  }
+}

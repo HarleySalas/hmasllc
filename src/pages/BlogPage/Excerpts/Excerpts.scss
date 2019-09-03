@@ -1,0 +1,36 @@
+@import "../../../styles/variables.scss";
+
+.blog-page {
+  min-height: 100vh;
+
+  &__container {
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__heading {
+    position: relative;
+    display: inline-block;
+    font-size: 4rem;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10rem;
+      height: 2px;
+      background-color: $color-primary;
+      top: 50%;
+    }
+
+    &::before {
+      left: -12rem;
+    }
+
+    &::after {
+      right: -12rem;
+    }
+  }
+}

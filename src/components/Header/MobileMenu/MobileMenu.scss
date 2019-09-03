@@ -3,9 +3,9 @@
 .mobile-menu {
   &__toggle {
     position: absolute;
-    top: 1rem;
+    top: 1.25rem;
     right: 5rem;
-    height: 5rem;
+    height: 2.75rem;
     width: 5rem;
     text-align: center;
     background: transparent;
@@ -16,8 +16,16 @@
     cursor: pointer;
     z-index: 2000;
 
+    &--lowIndex {
+      z-index: 500;
+    }
+
     &:focus {
       outline: none;
+    }
+
+    @media only screen and(min-width: 46.937em) {
+      display: none;
     }
   }
 

@@ -1,9 +1,16 @@
 @import "../../styles/variables.scss";
 
 .mission {
+  min-height: 25vh;
   background-color: rgba($color-black, 0.07);
   box-shadow: 0px 0px 3px 5px rgba($color-black, 0.11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
 
+  @include animateInUp;
+  
   &__header {
     position: relative;
     // margin: 0 auto 0 2rem;

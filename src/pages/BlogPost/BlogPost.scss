@@ -1,0 +1,141 @@
+@import '../../styles/variables.scss';
+
+.blog-post {
+  min-height: 100vh;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+
+  @include respond (tab-small) {
+    padding-top: 7rem;
+  }
+
+  &__back {
+    &--top {
+      width: 100%;
+    }
+
+    &--bottom {
+      margin-top: 2rem;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__heading-container {
+    text-align: center;
+    width: 72%;
+    padding: 1rem 0;
+
+    @include respond (tab-small) {
+      width: 95%;
+    }
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  &__divider {
+    margin: 0 auto;
+    width: 72%;
+    height: 2px;
+    background-color: $color-primary;
+    margin-bottom: 0.42rem;
+  }
+
+  &__date {
+    width: 100%;
+    color: rgba($color-black, 0.72);
+    font-style: italic;
+    font-size: 1.6rem;
+  }
+
+  &__content {
+    width: 100%;
+
+    p {
+      text-indent: 2rem;
+      margin: 2rem 0;
+    }
+
+    // .wp-block-image {
+    //   width: 100%;
+    //   display: inline-block;
+    //   margin: 2rem 0;
+    // }
+
+    figure {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 2rem 0;
+
+      img {
+        width: 50rem;
+        box-shadow: 0 0 .3rem .3rem rgba($color-black, 0.11);
+        margin-bottom: 0.5rem;
+
+        @include respond(tab-small) {
+          width: 42rem;
+        }
+
+        @include respond(phone) {
+          width: 30rem;
+        }
+      }
+
+      figcaption {
+        text-align: center;
+        color: rgba($color-black, 0.72);
+        font-style: italic;
+      }
+    }
+
+    // figure {
+    //   display: block;
+    //   position: relative;
+    //   width: 50rem;
+    //   margin: 0 auto;
+
+    //   img {
+    //     width: 50rem;
+    //     margin: 0 auto;
+    //     box-shadow: 0 0 .3rem .3rem rgba($color-black, 0.11);
+    //   }
+    // }
+
+    // img {
+    //   width: 100%;
+    //   box-shadow: 0 0 .3rem .3rem rgba($color-black, 0.11);
+    // }
+
+    // figcaption {
+    //   text-align: center;
+    //   color: rgba($color-black, 0.72);
+    //   font-style: italic;
+    // }
+
+    h2, h3, h4 {
+      text-align: center;
+      font-weight: 400;
+    }
+
+    ul {
+      margin: 0 5rem;
+    }
+
+    a {
+      text-decoration: underline;
+      font-weight: 700;
+      transition: color .24s ease;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

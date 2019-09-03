@@ -4,11 +4,23 @@ import "./AboutSection.scss";
 
 import chachyImg from "./assets/chachy-photo.jpg";
 
+import { useAnimateObserver } from '../../utils';
+
 const AboutSection = () => {
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+
+  const animation1 = useAnimateObserver({
+    itemRef: ref1
+  })
+
+  const animation2 = useAnimateObserver({
+    itemRef: ref2
+  })
   return (
     <section id="about" className="about">
       <div className="container container--padding-5">
-        <div className="about__section about__section--left">
+        <div className={`about__section about__section--left ${animation1 && 'about__section--left--animated'}`} ref={ref1}>
           <h2 className="about__heading">About</h2>
           <div className="about__img__wrapper">
             <img
@@ -21,14 +33,14 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
-        <div className="about__section about__section--right">
+        <div className={`about__section about__section--right ${animation2 && 'about__section--right--animated'}`} ref={ref2}>
           <div className="about__content-wrapper">
             <p className="about__p">
-              Horacio (Chachy) Moreno started his career in accounting in 2012
+              Horacio, "Chachy" Moreno started his accounting career in 2012
               after receiving his degree in Accounting Operations from Sheridan
               Technical College. Chachy served as the head accountant for
               several companies over the next three years before starting his
-              own company HM Accounting Services in 2015.
+              own company, <i>"HM Accounting Services"</i> in 2015.
             </p>
             <p className="about__p">
               Chachy’s mission is to help people create the space in their lives

@@ -12,6 +12,10 @@
   align-items: center;
   justify-content: flex-end;
 
+  @include respond(tab-small) {
+    display: none;
+  }
+
   &__ul {
     list-style: none;
   }
@@ -19,21 +23,19 @@
   &__li {
     display: inline-block;
     text-transform: uppercase;
-    margin-left: 2rem;
-    font-size: 2rem;
+    margin-left: 3rem;
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
     position: relative;
+    transition: all 0.11s ease;
 
-    &--active {
-      &::before {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 2px;
-        background-color: $color-primary;
-        bottom: -1rem;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+    &:hover {
+      color: $color-primary;
     }
+  }
+
+  &__mobile {
+    z-index: 0;
   }
 }

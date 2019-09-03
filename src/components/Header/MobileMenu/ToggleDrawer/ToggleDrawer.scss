@@ -2,4 +2,9 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1500;
+
+  &--lowIndex {
+    z-index: 450;
+  }
 }

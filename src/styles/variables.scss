@@ -15,6 +15,114 @@ $color-grey-light: #808080;
 $color-grey-dark: #373636;
 
 $color-black: #15171f;
+$color-black-light: #181b24;
 
-//FONT SIZE
-$baseFontSize: 1.6rem;
+
+
+
+//MEDIA QUERIES
+@mixin respond($breakpoint) {
+  @if $breakpoint == small-phone {
+    @media only screen and (max-width: 23.125em) {
+      //370px                         370/16=23.125
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 26em) {
+      //416px
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-phone {
+    @media only screen and (max-width: 37.5em) {
+      // 600px                 600/16=37.5
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-small {
+    @media only screen and (max-width: 46.875em) {
+      //750px                      750/16=46.875
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      //900px                    900/16=56.25
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      //1200px                     1200/16=75
+      @content;
+    }
+  }
+
+  @if $breakpoint == small-desktop {
+    @media only screen and (max-width: 87.5em) {
+      //1400px                     1400/16=87.5
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      //1800px                1800/16=112.5
+      @content;
+    }
+  }
+}
+
+//MIXINS
+@mixin slideInLeft {
+  transform: translateX(15rem);
+  opacity: 0;
+
+  &--animated {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.72s cubic-bezier(0.33, 0.55, 0.58, 0.97);
+    @content;
+  }
+}
+
+@mixin slideInTop {
+  transform: translateY(15rem);
+  opacity: 0;
+
+  &--animated {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.72s cubic-bezier(0.33, 0.55, 0.58, 0.97);
+    @content;
+  }
+}
+
+@mixin animateInLeft {
+  opacity: 0;
+
+  &--animated {
+    animation: slideInLeftGentle .72s cubic-bezier(0.33, 0.55, 0.58, 0.97) forwards;
+  }
+}
+
+@mixin animateInRight {
+  opacity: 0;
+
+  &--animated {
+    animation: slideInRightGentle .72s cubic-bezier(0.33, 0.55, 0.58, 0.97) forwards;
+  }
+}
+
+@mixin animateInUp {
+  opacity: 0;
+  &--animated {
+    animation: slideInUpGentle .72s cubic-bezier(0.33, 0.55, 0.58, 0.97) forwards;
+  }
+}

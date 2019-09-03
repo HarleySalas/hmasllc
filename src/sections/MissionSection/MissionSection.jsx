@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import "./MissionSection.scss";
 
+import { useAnimateObserver } from '../../utils';
+
 const MissionSection = () => {
+  const ref1 = useRef(null);
+
+  const animated = useAnimateObserver({
+    itemRef: ref1
+  })
   return (
-    <section className="mission">
-      <div className="container container--padding-5">
+    <section className={`mission ${animated && 'mission--animated'}`} ref={ref1}>
+      <div className="container container--padding-3">
         <h2 className="mission__header">Mission Statement</h2>
         <p className="mission__text">
           Our mission is to do all of the things you hate to deal with when

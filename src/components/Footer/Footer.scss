@@ -1,0 +1,48 @@
+@import "../../styles/variables.scss";
+
+.footer {
+  width: 100vw;
+  background-color: $color-black;
+  color: rgba($color-white, 0.52);
+
+  @include respond(big-phone) {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+  }
+
+  &__container {
+    padding: 2rem 0;
+    width: 50%;
+
+    @include respond(big-phone) {
+      width: 100%;
+      padding: 0;
+    }
+
+    &--left {
+      text-align: left;
+
+      @include respond(big-phone) {
+        text-align: center;
+      }
+    }
+
+    &--right {
+      text-align: right;
+
+      @include respond(big-phone) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__link {
+    transition: all 0.11s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

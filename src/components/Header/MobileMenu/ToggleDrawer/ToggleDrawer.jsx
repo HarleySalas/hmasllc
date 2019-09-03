@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import "./ToggleDrawer.scss";
 
-const ToggleDrawer = ({ open, children, openClass, closeClass }) => {
+const ToggleDrawer = ({ open, children, openClass, closeClass, home }) => {
   const [shouldRender, setRender] = useState(open);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const ToggleDrawer = ({ open, children, openClass, closeClass }) => {
   return (
     shouldRender && (
       <div
-        className={`toggle-drawer ${open ? openClass : closeClass}`}
+        className={`toggle-drawer ${open ? openClass : closeClass} ${home && 'toggle-drawer--lowIndex'}`}
         onAnimationEnd={onAnimationEnd}
       >
         {children}

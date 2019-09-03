@@ -1,6 +1,14 @@
 @import "../../../styles/variables.scss";
 
 .blog {
+  padding: 7rem 0;
+
+  @include animateInUp;
+
+  &__container {
+    flex-direction: column;
+  }
+
   &__heading {
     width: 100%;
     text-align: center;

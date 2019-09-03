@@ -3,8 +3,8 @@
 .contact__form {
   display: flex;
   flex-wrap: wrap;
-  // background-color: $color-primary;
-  padding: 1rem;
+  // padding: 1rem;
+  color: $color-white;
 
   &__input {
     &--half {
@@ -16,14 +16,19 @@
       width: 100%;
       padding: 0 1rem;
     }
-
-    &--bg {
-      background-color: rgba($color-black, 0.07);
-      box-shadow: 0 0 1px 1px rgba($color-black, 0.11);
-    }
   }
 
   &__submit {
-    margin: 1rem 0 0 1rem;
+    letter-spacing: 0.24rem;
+    padding: 1rem 3rem;
+    margin: 2rem auto 0 auto;
+  }
+
+  &__posted {
+    width: 100%;
+    text-align: center;
+    color: $color-primary;
+    animation: slideInLeft .42s ease forwards;
+    margin-top: 1rem;
   }
 }

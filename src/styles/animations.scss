@@ -1,15 +1,5 @@
 @import "./variables.scss";
 
-//hover effects
-.hover__white-primary {
-  color: $color-white;
-  transition: all 0.11s cubic-bezier(0.86, 0, 0.07, 1);
-
-  &:hover {
-    color: $color-primary;
-  }
-}
-
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -69,5 +59,117 @@
 
   100% {
     transform: translateX(100%);
+  }
+}
+
+@keyframes headerAnimated {
+  0% {
+    transform: translateY(-7rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes headerHidden {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes headerDivider {
+  0% {
+    transform: scaleX(0) translateX(50%);
+  }
+
+  100% {
+    transform: scaleX(1) translateX(50%);
+  }
+}
+
+@keyframes cardAnimated {
+  0% {
+    opacity: 0;
+    transform: translateY(-7rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardHidden {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes hoverCard {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba($color-black, 0);
+  }
+
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0.5rem 0.5rem rgba($color-black, 0.11);
+  }
+}
+
+@keyframes heroImage {
+  0% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes slideInLeftGentle {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem) scale(1) rotate(0.1deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0.1deg);
+  }
+}
+
+@keyframes slideInRightGentle {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUpGentle {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

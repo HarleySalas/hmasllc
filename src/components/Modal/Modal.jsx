@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import {
-  usePortal,
+  Portal,
   useOnClickOutside,
   useDisableBodyScroll
 } from "../../utils";
@@ -16,13 +16,13 @@ const Modal = props => {
   useDisableBodyScroll();
 
   return (
-    <usePortal>
+    <Portal>
       <div className="modal">
         <div className="modal__wrapper" ref={ref}>
           {props.children}
         </div>
       </div>
-    </usePortal>
+    </Portal>
   );
 };
 

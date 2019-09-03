@@ -1,7 +1,17 @@
 @import "../../styles/variables.scss";
 
 .contact {
+  background-color: $color-black-light;
+  color: $color-white;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+
   &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include animateInUp;
   }
 
   &__wrapper {
@@ -9,14 +19,54 @@
   }
 
   &__heading {
-    margin: 0 0 0 2rem;
+    position: relative;
+    font-size: 4rem;
+    text-align: center;
+    // width: 100%;
+    color: $color-primary;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10rem;
+      height: 2px;
+      background-color: $color-white;
+      top: 50%;
+    }
+
+    &::before {
+      left: -12rem;
+    }
+
+    &::after {
+      right: -12rem;
+    }
+  }
+
+  &__email {
+    text-decoration: underline;
+    transition: all 0.24s cubic-bezier(0.86, 0, 0.07, 1);
+    color: $color-white;
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 
   &__form-wrapper {
     width: 60%;
-    height: 42rem;
+    min-height: 44rem;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
+    @include respond(tab-land) {
+      width: 80%;
+    }
+
+    @include respond(tab-small) {
+      width: 100%;
+    }
   }
 }

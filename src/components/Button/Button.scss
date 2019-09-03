@@ -10,6 +10,7 @@
   transform: scale(1);
   transition: all 0.11s ease-out;
   font-weight: 400;
+  z-index: 10;
 
   &:focus {
     outline: none;
@@ -30,7 +31,7 @@
     }
   }
 
-  &--black {
+  &--white-outline {
     color: $color-white;
     background-color: $color-black;
     border: 1px solid $color-white;
@@ -42,6 +43,21 @@
     &:active {
       color: $color-primary-dark;
       transform: scale(0.98);
+    }
+  }
+
+  &--black-outline {
+    color: $color-black;
+    background-color: $color-white;
+    border: 1px solid $color-black;
+
+    &:hover {
+      color: $color-primary;
+
+      &:active {
+        color: $color-primary-dark;
+        transform: scale(0.98);
+      }
     }
   }
 

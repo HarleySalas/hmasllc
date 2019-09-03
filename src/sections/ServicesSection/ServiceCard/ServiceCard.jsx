@@ -29,43 +29,51 @@ library.add(
   faBuilding
 );
 
-const ServiceCard = props => {
+const Card = (props, ref) => {
   const [open, toggle] = useToggle(false);
 
   return (
     <React.Fragment>
-      <div className="service__card">
-        <FontAwesomeIcon icon={props.icon} size="4x" />
-        <h3 className="service__card__heading">{props.name}</h3>
-        <div className="service__card__description">{props.description}</div>
-        <Button
-          btnStyle="primary"
-          btnSize="sm"
-          btnText="More Info"
-          addClass="service__card__more"
-          onClick={toggle}
-        />
+      <div className="service__card" onClick={toggle}>
+        <div className="service__card__container">
+          <div ref={ref} className={`service__card__wrapper ${props.addClass}`}>
+            <FontAwesomeIcon icon={props.icon} size="4x" />
+            <h3 className="service__card__heading">{props.name}</h3>
+            <div className="service__card__description">
+              {props.description}
+            </div>
+            <Button
+              btnStyle="primary"
+              btnSize="sm"
+              btnText="More Info"
+              addClass="service__card__more"
+            />
+          </div>
+        </div>
       </div>
       {open && (
         <Modal onClickOutside={toggle}>
-          <div className="service__card__modal">
-            <div className="service__card__modal__bg">
-              <FontAwesomeIcon icon={props.icon} size="4x" />
+          <div className="container">
+            <div className="service__card__modal">
+              <div className="service__card__modal__bg">
+                <FontAwesomeIcon icon={props.icon} size="4x" />
+              </div>
+              <h2 className="service__card__modal__heading">{props.name}</h2>
+              <div className="service__card__modal__content">{props.content}</div>
+              <Button
+                btnStyle="primary"
+                btnSize="md"
+                btnText="Close"
+                addClass="service__card__modal__btn"
+                onClick={toggle}
+              />
             </div>
-            <h2 className="service__card__modal__heading">{props.name}</h2>
-            <div className="service__card__modal__content">{props.content}</div>
-            <Button
-              btnStyle="primary"
-              btnSize="md"
-              btnText="Close"
-              addClass="service__card__modal__btn"
-              onClick={toggle}
-            />
           </div>
         </Modal>
       )}
     </React.Fragment>
   );
 };
+const ServiceCard = React.forwardRef(Card);
 
 export default ServiceCard;

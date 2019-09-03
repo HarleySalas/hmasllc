@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import moment from "moment";
 
 import "./BlogSection.scss";
@@ -27,6 +28,7 @@ const BlogSection = () => {
   const content = res.response[0].content.rendered;
   const excerpt = res.response[0].excerpt.rendered;
   const date = moment(res.response[0].date).format("MMM Do, YYYY");
+  const slug = res.response[0].slug;
 
   const excerptModified =
     excerpt.replace("[&hellip;]</p>", "...<span>Read More</span></p>") ||
@@ -34,7 +36,13 @@ const BlogSection = () => {
 
   return (
     <BlogSectionContainer>
-      <BlogSectionContent title={title} date={date} content={excerptModified} />
+      <Link to={`/${slug}`}>
+        <BlogSectionContent
+          title={title}
+          date={date}
+          content={excerptModified}
+        />
+      </Link>
     </BlogSectionContainer>
   );
 };

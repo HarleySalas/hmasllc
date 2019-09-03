@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import "./ContactForm.scss";
 
 import Button from "../../../components/Button/Button.jsx";
@@ -25,19 +26,24 @@ const ContactForm = () => {
     posted
   } = useFormValidate(INITIAL_STATE, ValidateContact, sendEmail);
 
-  const url = "/contact/v1/post";
-
   function sendEmail() {
-    return fetch(url, {
-      method: "POST",
-      body: JSON.stringify({
-        name: `${values.name}`,
-        mail: `${values.mail}`,
-        phone: `${values.phone}`,
-        company: `${values.company}`,
-        message: `${values.message}`
+    const url = "/wp-json/contact/v1/post";
+
+    const body = {
+      name: `${values.name}`,
+      mail: `${values.mail}`,
+      phone: `${values.phone}`,
+      company: `${values.company}`,
+      message: `${values.message}`
+    }
+
+    axios.post(url, body)
+      .then((res) => {
+        console.log(res);
       })
-    });
+      .catch((err) => {
+        console.log(err);
+      });
   }
   return (
     <form onSubmit={handleSubmit} className="contact__form">
@@ -49,7 +55,6 @@ const ContactForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           errors={errors.name}
-          styles="contact__form__input--bg"
         />
       </div>
       <div className="contact__form__input contact__form__input--half">
@@ -60,29 +65,26 @@ const ContactForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           errors={errors.mail}
-          styles="contact__form__input--bg"
         />
       </div>
       <div className="contact__form__input contact__form__input--half">
         <Input
           name="phone"
-          placeholder="Phone Number (optional)"
+          placeholder="Phone Number"
           value={values.phone}
           onChange={handleChangeNumber}
           onBlur={handleBlur}
           errors={errors.phone}
-          styles="contact__form__input--bg"
         />
       </div>
       <div className="contact__form__input contact__form__input--half">
         <Input
           name="company"
-          placeholder="Company (optional)"
+          placeholder="Company"
           value={values.company}
           onChange={handleChange}
           onBlur={handleBlur}
           errors={errors.company}
-          styles="contact__form__input--bg"
         />
       </div>
       <div className="contact__form__input contact__form__input--full">
@@ -94,7 +96,6 @@ const ContactForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           errors={errors.message}
-          styles="contact__form__input--bg"
         />
       </div>
       <Button
@@ -103,6 +104,7 @@ const ContactForm = () => {
         btnSize="md"
         addClass="contact__form__submit"
       />
+      {posted && <div className="contact__form__posted">Success! We'll respond to you shortly.</div>}
     </form>
   );
 };

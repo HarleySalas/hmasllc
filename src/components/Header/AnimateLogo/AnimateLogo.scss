@@ -1,0 +1,11 @@
+.animate-logo {
+  margin-right: auto;
+  transition: transform 0.42s cubic-bezier(0.86, 0, 0.07, 1);
+  &__animate {
+    transform: translateY(0);
+  }
+
+  &__hidden {
+    transform: translateY(-7rem);
+  }
+}

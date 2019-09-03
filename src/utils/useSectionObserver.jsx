@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 
-const useScrollSpy2 = (sectionIds, INITIAL_STATE) => {
-  // const sectionNames = sectionIds.map(el => el.slice(1));
+const useSectionObserver = (sectionIds, INITIAL_STATE, navigate) => {
   const [activeSection, setActiveSection] = useState(INITIAL_STATE);
 
   const options = {
@@ -11,6 +11,7 @@ const useScrollSpy2 = (sectionIds, INITIAL_STATE) => {
   const changeActiveSection = (sections, observer) => {
     sections.forEach(section => {
       const id = section.target.getAttribute("id");
+
       if (section.isIntersecting && section.intersectionRatio >= 0.45) {
         setActiveSection(activeSection => ({
           ...activeSection,
@@ -30,7 +31,6 @@ const useScrollSpy2 = (sectionIds, INITIAL_STATE) => {
   useEffect(() => {
     const observer = new IntersectionObserver(changeActiveSection, options);
     const queriedIds = document.querySelectorAll(sectionIds);
-    console.log(queriedIds);
 
     if (queriedIds) {
       queriedIds.forEach(section => {
@@ -43,9 +43,9 @@ const useScrollSpy2 = (sectionIds, INITIAL_STATE) => {
         observer.disconnect(section);
       });
     };
-  }, []);
+  }, [navigate]);
 
   return activeSection;
 };
 
-export default useScrollSpy2;
+export default useSectionObserver;

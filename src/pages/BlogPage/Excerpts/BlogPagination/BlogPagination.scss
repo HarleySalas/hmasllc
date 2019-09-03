@@ -1,0 +1,18 @@
+@import '../../../../styles/variables.scss';
+
+.pagination {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  &__number {
+    display: inline-block;
+    margin: 0 0.5rem;
+    cursor: pointer;
+
+    &--active {
+      font-weight: 900;
+      color: $color-primary;
+    }
+  }
+}

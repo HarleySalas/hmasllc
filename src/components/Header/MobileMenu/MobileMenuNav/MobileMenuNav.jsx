@@ -3,34 +3,22 @@ import { NavLink, Link } from "react-router-dom";
 
 import "./MobileMenuNav.scss";
 
-import { useSectionObserver, useDisableBodyScroll } from "../../../../utils";
-
-const INITIAL_STATE = {
-  about: null,
-  services: null,
-  contact: null
-};
+import { useDisableBodyScroll } from "../../../../utils";
 
 const MobileMenuNav = props => {
-  const sectionIds = ["#about", "#services", "#contact"];
-  const activeSection = useSectionObserver(sectionIds, INITIAL_STATE);
-
   useDisableBodyScroll();
 
   return (
-    <div
-      className={`mobile-menu__wrapper ${props.open &&
-        "mobile-menu__wrapper--active"}`}
-    >
+    <div className="mobile-menu__wrapper">
       <nav className="mobile-menu__nav">
-        <ul className="mobile-menu__ul">
+        <ul className="mobile-menu__ul" onClick={props.navigate}>
           <Link
             to="/#services"
             className="mobile-menu__link"
             onClick={props.onClick}
           >
             <li
-              className={`mobile-menu__li ${activeSection.services &&
+              className={`mobile-menu__li ${props.activeSection.services &&
                 "mobile-menu__li--active"}`}
             >
               Services
@@ -42,7 +30,7 @@ const MobileMenuNav = props => {
             onClick={props.onClick}
           >
             <li
-              className={`mobile-menu__li ${activeSection.about &&
+              className={`mobile-menu__li ${props.activeSection.about &&
                 "mobile-menu__li--active"}`}
             >
               About
@@ -61,7 +49,7 @@ const MobileMenuNav = props => {
             onClick={props.onClick}
           >
             <li
-              className={`mobile-menu__li ${activeSection.contact &&
+              className={`mobile-menu__li ${props.activeSection.contact &&
                 "mobile-menu__li--active"}`}
             >
               Contact

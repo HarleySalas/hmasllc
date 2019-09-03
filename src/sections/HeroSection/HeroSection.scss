@@ -1,23 +1,55 @@
 @import "../../styles/variables.scss";
 
 .hero {
-  height: 100vh;
+  height: 85vh;
+  position: relative;
 
-  &__background {
-    background-image: linear-gradient(
+  &__shape {
+    width: 100vw;
+    height: 80vh;
+    clip-path: polygon(100% 0, 100% 90%, 32% 100%, 0 90%, 0 0);
+    overflow: hidden;
+
+    &__stroke {
+      background-color: $color-primary;
+      height: 83vh;
+      width: 100vw;
+      clip-path: polygon(100% 0, 100% 90%, 32% 100%, 0 90%, 0 0);
+
+      &__overlay {
+        background-color: $color-black;
+        width: 100vw;
+        height: 80vh;
+        clip-path: polygon(100% 0, 100% 90%, 32% 100%, 0 90%, 0 0);
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100vw;
+    min-height: 85vh;
+    transform: translate(-50%, -50%) scale(1.1);
+
+    &--animated {
+      animation: heroImage 3.42s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+    }
+
+    &__overlay {
+      position: relative;
+      height: 80vh;
+      width: 100vw;
+      background-image: linear-gradient(
         to bottom,
-        rgba($color-black, 0.94),
+        rgba($color-black, 0.9),
         rgba($color-black, 1)
-      ),
-      url(./assets/bill-closeup.jpg);
-    width: 100%;
-    height: 90vh;
-    background-size: cover;
-    background-position: center;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__title {
@@ -27,6 +59,9 @@
     letter-spacing: 0.5rem;
     font-size: 10rem;
     line-height: 1.2;
+    @include slideInLeft {
+      transition-delay: 0.24s;
+    }
   }
 
   &__subtitle {
@@ -36,5 +71,66 @@
     font-size: 2.7rem;
     letter-spacing: 2rem;
     margin-bottom: 2rem;
+    font-weight: 400;
+    @include slideInLeft {
+      transition-delay: 0.48s;
+    }
+  }
+
+  &__divider {
+    position: relative;
+    flex: 0 0 100%;
+    height: 1px;
+    margin-bottom: 3rem;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: -40%;
+      width: 80%;
+      height: 1px;
+      background-color: $color-primary;
+      margin: 0 auto 0 0;
+      transform: scaleX(0) translateX(50%);
+    }
+
+    &--animated {
+      &::before {
+        transform: scaleX(1) translateX(50%);
+        transition: all 1.2s cubic-bezier(0.33, 0.55, 0.58, 0.97);
+        transition-delay: 1s;
+      }
+    }
+  }
+
+  &__contact {
+    position: absolute;
+    bottom: 10rem;
+
+    @include slideInTop {
+      transition-delay: 1s;
+    }
+
+    &-ref {
+      position: absolute;
+      bottom: 15rem;
+      height: 5px;
+      width: 5px;
+      background-color: transparent;
+    }
+  }
+
+  &__dots {
+    width: 15rem;
+    height: 60vh;
+    top: 10rem;
+    right: 0rem;
+  }
+
+  &__scrollpoint {
+    position: absolute;
+    top: 50vh;
+    width: 1px;
+    height: 1px;
   }
 }

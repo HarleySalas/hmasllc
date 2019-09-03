@@ -1,22 +1,30 @@
 @import "../../styles/variables.scss";
 
 .about {
-  min-height: 100vh;
+  // min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 3rem;
+  min-height: 75vh;
+  padding-top: 5rem;
 
   &__section {
     width: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 
+    @include respond(tab-small) {
+      width: 100%;
+    }
+
     &--left {
+      @include animateInRight;
     }
     &--right {
+      @include animateInLeft;
     }
   }
 
@@ -48,6 +56,10 @@
       height: 30rem;
       width: 30rem;
       overflow: hidden;
+
+      @include respond(tab-small) {
+        margin-bottom: 2rem;
+      }
 
       &:hover {
         .about__img {
@@ -85,6 +97,16 @@
   &__p {
     text-indent: 2rem;
     margin-bottom: 2rem;
+
+    &:nth-child(1) {
+      text-indent: 0;
+      &::first-letter {
+        font-weight: 700;
+        font-size: 3.5rem;
+        float: left;
+        line-height: 0.7;
+      }
+    }
 
     &:nth-last-child(1) {
       margin-bottom: 0;

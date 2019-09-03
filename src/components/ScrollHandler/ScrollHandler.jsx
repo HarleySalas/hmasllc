@@ -8,7 +8,9 @@ const ScrollHandler = ({ location }) => {
     setTimeout(() => {
       window.scrollTo({
         behavior: element ? "smooth" : "auto",
-        top: element ? element.offsetTop : 0
+        top: element
+          ? element.offsetTop - element.getAttribute("data-scroll-offset")
+          : 0
       });
     }, 100);
   }, [location]);

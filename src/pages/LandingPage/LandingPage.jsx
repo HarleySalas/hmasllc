@@ -1,7 +1,5 @@
 import React from "react";
 
-import Header from "../../components/Header/Header.jsx";
-
 import HeroSection from "../../sections/HeroSection/HeroSection.jsx";
 import MissionSection from "../../sections/MissionSection/MissionSection.jsx";
 import ServicesSection from "../../sections/ServicesSection/ServicesSection.jsx";
@@ -10,16 +8,15 @@ import BlogSection from "../../sections/BlogSection/BlogSection.jsx";
 import MailingSection from "../../sections/MailingSection/MailingSection.jsx";
 import ContactSection from "../../sections/ContactSection/ContactSection.jsx";
 
-const LandingPage = () => {
+const LandingPage = props => {
   return (
     <div>
-      {/* <Header /> */}
       <HeroSection />
-      <MissionSection />
       <ServicesSection />
       <AboutSection />
-      <BlogSection />
+      <MissionSection />
       <MailingSection />
+      <BlogSection />
       <ContactSection />
     </div>
   );

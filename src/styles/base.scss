@@ -11,12 +11,34 @@
 }
 
 html {
+  position: relative;
   font-size: 62.5%; //makes 1rem = 10px
   background-color: $color-white;
+  overflow-x: hidden;
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
+
+  @include respond(tab-port) {
+    // 1 rem = 8px, 8/16 = 50%
+    font-size: 60%;
+  }
+
+  @include respond(tab-land) {
+    // 1 rem = 9px,   9/16 = 56.25%
+    font-size: 56.25%;
+  }
+
+  // @include respond(big-desktop) {
+  //   // 1 rem = 12px,      12/16= 75%
+  //   font-size: 75%;
+  // }
 }
 
 body {
-  width: 100vw;
+  position: relative;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -24,6 +46,7 @@ body {
 // overflow-x: hidden; from body tag.
 .app {
   width: 100%;
+  overflow-x: hidden;
 }
 
 //Remove the gray background on active links in IE 10.

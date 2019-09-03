@@ -1,0 +1,82 @@
+@import '../../styles/variables.scss';
+
+// .loading {
+//   height: 10rem;
+//   width: 100%;
+//   border-radius: 50%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+  
+//   &__hollow {
+//     width: 3rem;
+//     height: 3rem;
+//     animation: loaderAnim 1.24s infinite ease-in-out;
+//   }
+
+//   &__box {
+//     &--large {
+//       height: 3rem;
+//       width: 3rem;
+//       border-radius: 50%;
+//       background-color: $color-primary;
+//       outline: 1px solid transparent;
+//       position: fixed;
+//     }
+
+//     &--small {
+//       width: 3rem;
+//       height: 3rem;
+//       background-color: $color-white;
+//       position: fixed;
+//       z-index: 1;
+//       outline: 1px solid transparent;
+//       animation: smallBoxAnim 1.24s alternate infinite ease-in-out;
+//     }
+//   }
+// }
+
+// @keyframes smallBoxAnim {
+//   0% {transform: scale(0.42);}
+//   100% {transform: scale(0.72)}
+// }
+
+// @keyframes loaderAnim {
+//   0% {transform: rotate(0deg);}
+//   100% {transform: rotate(90deg);}
+// }
+
+$width: 10rem;
+
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+.loading {
+  width: 100%;
+  height: 21rem;
+  animation-play-state: running;
+  opacity: 1;
+  position: relative;
+
+  &::before {
+    animation: spinner 1.24s linear infinite;
+    animation-play-state: inherit;
+    border: solid 3px rgba($color-black, 0.11);
+    border-bottom-color: $color-primary;
+    border-radius: 50%;
+    content: "";
+    height: 4rem;
+    left: 50%;
+    top: 50%;
+    opacity: inherit;
+    position: absolute;
+    transform: translate3d(-50%, -50%, 0);
+    width: 4rem;
+    will-change: transform;
+  }
+}

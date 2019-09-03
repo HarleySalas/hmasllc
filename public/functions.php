@@ -1,5 +1,4 @@
 <?php
-
   add_action("rest_api_init", "mailing_post");
 
   function mailing_post() {

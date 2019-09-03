@@ -1,68 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## HM Accounting Services, LLC Wesbite.
 
-## Available Scripts
+To run this website, you'd have to setup a local wordpress environment and run create-react-wptheme from https://www.npmjs.com/package/create-react-wptheme
 
-In the project directory, you can run:
+You can then go in to ./wp-content/themes/YOUR-THEME-NAME/react-src and clone this project in to that folder for it to run. You may have to verify your package.json home directory to make sure it will run properly.
 
-### `npm start`
+## About This Project.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This website was created for an Accounting business in South Florida with the purpose of having a modern, responsive website. They opted to have a blog and with the project timeline alotted, I figured I'd give the Wordpress REST API a try.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Integrations
+The client wanted to use their https://www.activecampaign.com/ account to collect users, so a mailing list form is implemented on the landing page. To make this function work locally, you'd have to add a "ActiveCampaign.php" file to ./wp-content/themes/YOUR-THEME-NAME/react-src/public with an `$API_KEY = "YOUR_API_KEY"` variable. Contacts signing up will then immediately be added to your Active Campaign contacts list.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Further Details...
+This project is built entirely with Functional Components/Hooks.

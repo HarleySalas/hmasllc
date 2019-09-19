@@ -5,7 +5,9 @@ import "./Input.scss";
 const Input = props => {
   return (
     <Fragment>
-      <label htmlFor={props.name} className="input__label">
+      <label htmlFor={props.name} className="input__label"
+        ariaLabel={props.name}
+      >
         {props.placeholder}
       </label>
       {props.textArea && (

@@ -2,12 +2,12 @@ import React, { useRef } from "react";
 
 import "./MissionSection.scss";
 
-import { useAnimateObserver } from '../../utils';
+import { useAnimateObserverOnce } from '../../utils';
 
 const MissionSection = () => {
   const ref1 = useRef(null);
 
-  const animated = useAnimateObserver({
+  const animated = useAnimateObserverOnce({
     itemRef: ref1
   })
   return (

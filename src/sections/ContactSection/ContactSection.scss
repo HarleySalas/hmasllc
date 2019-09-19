@@ -54,6 +54,29 @@
     }
   }
 
+  &__social-container {
+    margin-top: 1rem;
+  }
+
+  &__social-icon {
+    font-size: 3rem;
+    margin: 0 1rem;
+    path {
+      transition: .24s ease;
+      fill: rgba($color-white, 0.24);
+    }
+  }
+
+  &__social-link {
+    &:hover {
+      .contact__social-icon {
+        path {
+          fill: $color-primary;
+        }
+      }
+    }
+  }
+
   &__form-wrapper {
     width: 60%;
     min-height: 44rem;

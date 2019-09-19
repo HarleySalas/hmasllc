@@ -14,7 +14,6 @@ html {
   position: relative;
   font-size: 62.5%; //makes 1rem = 10px
   background-color: $color-white;
-  overflow-x: hidden;
 
   @include respond(phone) {
     font-size: 50%;

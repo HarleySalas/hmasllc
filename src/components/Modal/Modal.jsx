@@ -15,6 +15,7 @@ const Modal = props => {
 
   useDisableBodyScroll();
 
+
   return (
     <Portal>
       <div className="modal">

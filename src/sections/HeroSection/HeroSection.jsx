@@ -1,11 +1,15 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
+import { faFacebookSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./HeroSection.scss";
 import bgImg from "./assets/bill-closeup.jpg";
 import Button from "../../components/Button/Button.jsx";
 
 import { useAnimateObserver } from "../../utils";
+
 
 const HeroSection = props => {
   const itemRef = useRef(null);
@@ -85,6 +89,15 @@ const HeroSection = props => {
                       btnSize="lg"
                     />
                   </Link>
+                  <div className={`hero__social-container ${animated4 &&
+                    "hero__social-container--animated"}`}>
+                    <a className="hero__social-link" href="https://www.facebook.com/hmaccountingservicesllc/" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faFacebookSquare} className="hero__social-icon" />
+                    </a>
+                    <a className="hero__social-link" href="https://www.linkedin.com/in/horacio-moreno-0bb42383/" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faLinkedin} className="hero__social-icon" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

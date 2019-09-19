@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 
 const useDisableBodyScroll = () => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const defaultStyle = window.getComputedStyle(document.body).overflow;
 
     document.body.style.overflow = "hidden";

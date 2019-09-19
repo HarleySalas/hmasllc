@@ -4,17 +4,17 @@ import "./AboutSection.scss";
 
 import chachyImg from "./assets/chachy-photo.jpg";
 
-import { useAnimateObserver } from '../../utils';
+import { useAnimateObserverOnce } from '../../utils';
 
 const AboutSection = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
 
-  const animation1 = useAnimateObserver({
+  const animation1 = useAnimateObserverOnce({
     itemRef: ref1
   })
 
-  const animation2 = useAnimateObserver({
+  const animation2 = useAnimateObserverOnce({
     itemRef: ref2
   })
   return (

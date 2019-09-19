@@ -7,6 +7,7 @@ export { default as useForm } from "./useForm.jsx";
 export { default as useFormValidate } from "./useFormValidate.jsx";
 export { default as useSectionObserver } from "./useSectionObserver.jsx";
 export { default as useAnimateObserver } from "./useAnimateObserver";
+export { default as useAnimateObserverOnce } from "./useAnimateObserverOnce";
 
 //etc
 export { default as ValidateSignUp } from "./ValidateSignUp.jsx";

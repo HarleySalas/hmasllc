@@ -5,12 +5,12 @@ import Button from "../../../components/Button/Button.jsx";
 
 import "./BlogSectionContainer.scss";
 
-import { useAnimateObserver } from '../../../utils';
+import { useAnimateObserverOnce } from '../../../utils';
 
 const BlogSectionContainer = props => {
   const ref = useRef(null);
 
-  const animated = useAnimateObserver({
+  const animated = useAnimateObserverOnce({
     itemRef: ref
   });
 

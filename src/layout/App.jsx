@@ -12,7 +12,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
 
 const App = () => {
   return (
-    <div className="app">
+    <div className="app" id="app">
       <ScrollHandler />
       <Header />
       <Switch>

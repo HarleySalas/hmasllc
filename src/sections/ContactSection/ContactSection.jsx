@@ -1,15 +1,17 @@
 import React, { useRef } from "react";
+import { faFacebookSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./ContactSection.scss";
 
 import ContactForm from "./ContactForm/ContactForm.jsx";
 
-import { useAnimateObserver } from '../../utils';
+import { useAnimateObserverOnce } from '../../utils';
 
 const ContactSection = () => {
   const ref = useRef(null);
 
-  const animated = useAnimateObserver({
+  const animated = useAnimateObserverOnce({
     itemRef: ref
   })
 
@@ -22,6 +24,15 @@ const ContactSection = () => {
         <a href="mailto:horacio@hmasllc.com" className="contact__email">
           horacio@hmasllc.com
         </a>
+        <div className={`contact__social-container ${animated &&
+          "contact__social-container--animated"}`}>
+          <a className="contact__social-link" href="https://www.facebook.com/hmaccountingservicesllc/" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faFacebookSquare} className="contact__social-icon" />
+          </a>
+          <a className="contact__social-link" href="https://www.linkedin.com/in/horacio-moreno-0bb42383/" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faLinkedin} className="contact__social-icon" />
+          </a>
+        </div>
         <div className="contact__form-wrapper">
           <ContactForm />
         </div>

@@ -6,7 +6,7 @@ import "./MailingSection.scss";
 import Input from "../../components/Input/Input.jsx";
 import Button from "../../components/Button/Button.jsx";
 
-import { useFormValidate, ValidateSignUp, useAnimateObserver } from "../../utils";
+import { useFormValidate, ValidateSignUp, useAnimateObserverOnce } from "../../utils";
 
 const INITIAL_STATE = {
   firstName: "",
@@ -38,11 +38,11 @@ const MailingSection = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
 
-  const animated1 = useAnimateObserver({
+  const animated1 = useAnimateObserverOnce({
     itemRef: ref1
   })
 
-  const animated2 = useAnimateObserver({
+  const animated2 = useAnimateObserverOnce({
     itemRef: ref2
   })
 
